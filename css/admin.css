@@ -1,0 +1,132 @@
+:root {
+  --fg: #111;
+  --muted: #6b6b6b;
+  --line: #e4e4e4;
+  --soft: #f6f6f6;
+  --ok: #2e7d4f;
+  --err: #b3261e;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, sans-serif; color: var(--fg); background: var(--soft); }
+.hidden { display: none !important; }
+a.link { color: var(--muted); margin-right: 16px; font-size: 14px; }
+
+.btn {
+  background: var(--fg); color: #fff; border: 0;
+  padding: 10px 18px; border-radius: 8px; font: inherit; font-size: 14px; cursor: pointer;
+  transition: opacity .2s;
+}
+.btn:hover { opacity: .85; }
+.btn.ghost { background: #fff; color: var(--fg); border: 1px solid var(--line); }
+
+.login { min-height: 100vh; display: grid; place-items: center; }
+.login-card {
+  background: #fff; padding: 40px; border-radius: 16px; width: min(360px, 90vw);
+  display: grid; gap: 14px; border: 1px solid var(--line);
+}
+.login-card h1 { font-size: 22px; }
+
+.admin-bar {
+  display: flex; justify-content: space-between; align-items: center;
+  padding: 14px 4vw; background: #fff; border-bottom: 1px solid var(--line);
+}
+main { padding: 24px 4vw; }
+
+.tabs { display: flex; gap: 8px; margin-bottom: 20px; }
+.tabs button {
+  border: 1px solid var(--line); padding: 8px 16px;
+  border-radius: 8px; font: inherit; cursor: pointer; background: #fff;
+}
+.tabs button.active { background: var(--fg); color: #fff; border-color: var(--fg); }
+
+.split { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; align-items: start; }
+.panel {
+  background: #fff; border: 1px solid var(--line); border-radius: 14px; padding: 24px;
+  display: grid; gap: 14px;
+}
+.panel.wide { max-width: 900px; }
+.panel-head { display: flex; justify-content: space-between; align-items: center; }
+.panel h2 { font-size: 18px; }
+
+label { display: grid; gap: 6px; font-size: 13px; color: var(--muted); }
+label small { color: #999; }
+input, select, textarea {
+  font: inherit; font-size: 14px; color: var(--fg);
+  padding: 9px 11px; border: 1px solid var(--line); border-radius: 8px; background: #fff;
+}
+input:focus, select:focus, textarea:focus { outline: 2px solid #ddd; border-color: #bbb; }
+.row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+fieldset { border: 1px solid var(--line); border-radius: 10px; padding: 14px; display: grid; gap: 12px; }
+legend { font-size: 13px; color: var(--muted); padding: 0 6px; }
+.days { display: flex; flex-wrap: wrap; gap: 8px; }
+.days label {
+  display: flex; align-items: center; gap: 6px; border: 1px solid var(--line);
+  padding: 6px 12px; border-radius: 999px; color: var(--fg); cursor: pointer;
+}
+.days input { accent-color: var(--fg); }
+.preview { width: 100%; max-height: 200px; object-fit: cover; border-radius: 10px; }
+.actions { display: flex; gap: 10px; align-items: center; }
+.hint { color: var(--muted); font-size: 12px; }
+.err { color: var(--err); font-size: 13px; min-height: 18px; }
+.ok-msg { color: var(--ok); font-size: 14px; }
+
+.plist { list-style: none; display: grid; gap: 10px; max-height: 70vh; overflow: auto; }
+.plist li {
+  display: grid; grid-template-columns: 56px 1fr auto; gap: 12px; align-items: center;
+  border: 1px solid var(--line); border-radius: 10px; padding: 8px;
+}
+.plist img, .thumb { width: 56px; height: 56px; object-fit: cover; border-radius: 8px; background: var(--soft); }
+.plist .meta small { color: var(--muted); display: block; }
+.plist .acts { display: flex; gap: 6px; }
+.plist .acts button {
+  background: #fff; border: 1px solid var(--line); border-radius: 6px;
+  padding: 5px 10px; font: inherit; font-size: 12px; cursor: pointer;
+}
+.plist .acts button.del { color: var(--err); }
+
+.hours-edit { border-collapse: collapse; width: 100%; }
+.hours-edit td { padding: 8px 6px; border-bottom: 1px solid var(--line); font-size: 14px; }
+.hours-edit input[type="time"] { padding: 6px 8px; }
+
+@media (max-width: 800px) {
+  .split, .row { grid-template-columns: 1fr; }
+}
+
+/* ===== Burger King palette ===== */
+:root {
+  --red: #d62300;
+  --blue: #0a3d8f;
+  --brown-soft: #f8efe4;
+  --line: #ecdccb;
+  --soft: #faf5ee;
+}
+body { background: var(--soft); }
+.btn { background: var(--red); }
+.btn.ghost { background: #fff; color: var(--blue); border-color: var(--blue); }
+.tabs button.active { background: var(--blue); border-color: var(--blue); color: #fff; }
+.days input, .hours-edit input[type="checkbox"] { accent-color: var(--blue); }
+.days label:has(input:checked) { background: var(--brown-soft); border-color: var(--brown); }
+.panel h2 { color: var(--blue); }
+.plist .acts button.del { color: var(--red); border-color: #f1c4bb; }
+input:focus, select:focus, textarea:focus { outline: 2px solid var(--brown); border-color: var(--brown); }
+.ok-msg { color: var(--blue); }
+.err { color: var(--red); }
+
+/* ===== Phones ===== */
+@media (max-width: 800px) {
+  .admin-bar { flex-wrap: wrap; gap: 10px; }
+  main { padding: 16px 4vw; }
+  .panel { padding: 18px; }
+  .panel.wide { max-width: 100%; }
+  .actions { flex-wrap: wrap; }
+  .tabs button { flex: 1; }
+  .plist { max-height: none; }
+  .hours-edit td { font-size: 13px; padding: 6px 4px; }
+}
+@media (max-width: 600px) {
+  /* 16px inputs stop iOS from zooming in when a field is focused */
+  input, select, textarea { font-size: 16px; }
+  .hours-edit input[type="time"] { width: 100%; min-width: 0; }
+  .login-card { padding: 28px; }
+  .btn { padding: 12px 18px; }
+}

@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kbros | Cantina</title>
+  <meta name="description" content="Kbros cantina: coffee, snacks and daily plates.">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <header class="nav">
+    <a href="#home" class="brand">KBROS</a>
+    <nav>
+      <a href="#menu">Menu</a>
+      <a href="#about">About</a>
+      <a href="#hours">Hours</a>
+      <a href="#location">Find us</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <!-- Hero with spinning 3D burger -->
+  <section id="home" class="hero">
+    <div id="logo3d"></div>
+    <div class="hero-text">
+      <p class="eyebrow">Cantina · Daily</p>
+      <h1 id="siteName">Kbros</h1>
+      <p id="tagline"></p>
+      <div class="hero-actions">
+        <a href="#menu" class="btn">See the menu</a>
+        <a href="#location" class="btn ghost">Find us</a>
+      </div>
+    </div>
+    <a href="#featured" class="scroll-hint" aria-label="Scroll down">↓</a>
+  </section>
+
+  <!-- Moving ticker -->
+  <div class="marquee" aria-hidden="true">
+    <div class="marquee-track" id="marqueeTrack"></div>
+  </div>
+
+  <!-- Featured products (filled from the admin) -->
+  <section id="featured" class="section">
+    <p class="eyebrow">Picked for you</p>
+    <h2>Featured</h2>
+    <div class="grid" id="featuredGrid"></div>
+  </section>
+
+  <!-- Why Kbros -->
+  <section class="section alt">
+    <p class="eyebrow">Why Kbros</p>
+    <h2>Simple food, made well</h2>
+    <div class="features">
+      <article class="feature">
+        <span class="num">01</span>
+        <h3>Fresh every day</h3>
+        <p>Coffee is pulled to order and the plates are prepared in the morning, so what you get is fresh.</p>
+      </article>
+      <article class="feature">
+        <span class="num">02</span>
+        <h3>Know what you eat</h3>
+        <p>Every item lists its ingredients, so you can check before you order.</p>
+      </article>
+      <article class="feature">
+        <span class="num">03</span>
+        <h3>Quick and friendly</h3>
+        <p>Grab a coffee between classes, meetings or a walk. In and out in minutes.</p>
+      </article>
+    </div>
+  </section>
+
+  <!-- Menu -->
+  <section id="menu" class="section">
+    <p class="eyebrow">Eat &amp; drink</p>
+    <h2>Menu</h2>
+    <div class="filters" id="filters"></div>
+    <div class="grid" id="productGrid"></div>
+  </section>
+
+  <!-- Gallery (only shown when products have photos) -->
+  <section id="gallery" class="section alt" hidden>
+    <p class="eyebrow">Gallery</p>
+    <h2>A look inside</h2>
+    <div class="gallery" id="galleryGrid"></div>
+  </section>
+
+  <!-- About -->
+  <section id="about" class="section">
+    <div class="about">
+      <div>
+        <p class="eyebrow">Our story</p>
+        <h2>About Kbros</h2>
+        <p class="about-text" id="aboutText"></p>
+        <a href="#contact" class="btn ghost">Get in touch</a>
+      </div>
+      <div class="about-mark" aria-hidden="true">KBROS</div>
+    </div>
+  </section>
+
+  <!-- Hours and location -->
+  <section id="hours" class="section alt">
+    <div class="info-grid">
+      <div>
+        <p class="eyebrow">When to visit</p>
+        <h2>Opening hours</h2>
+        <div id="openNow" class="status"></div>
+        <table class="hours" id="hoursTable"></table>
+      </div>
+      <div id="location">
+        <p class="eyebrow">Where to find us</p>
+        <h2>Location</h2>
+        <div id="map"></div>
+        <p id="addressText" class="muted"></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Call to action -->
+  <section class="cta">
+    <h2>Hungry? Come by today.</h2>
+    <a href="#menu" class="btn light">Browse the menu</a>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact" class="section">
+    <p class="eyebrow">Say hello</p>
+    <h2>Contact</h2>
+    <div class="contact" id="contactInfo"></div>
+  </section>
+
+  <footer>
+    <span>&copy; Kbros</span>
+    <a href="#home">Back to top</a>
+    <a href="admin.html">Admin</a>
+  </footer>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <script src="js/data.js"></script>
+  <script src="js/logo3d.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
